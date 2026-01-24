@@ -1,0 +1,28 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+
+body{
+    padding: 10px;
+}
+
+h4{
+    padding-left: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}

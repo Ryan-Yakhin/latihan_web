@@ -1,0 +1,276 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --text-accent-color: #666;
+  --border-color: #e0e0e0;
+  --primary-color: #000;
+  --line-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--border-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+#top {
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+#top h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+#top > p {
+  color: var(--text-accent-color);
+  margin-bottom: 2rem;
+}
+
+.timeline h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.timeline p {
+  font-size: 1rem;
+  color: var(--text-accent-color);
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--line-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.isi {
+  margin-bottom: 20px;
+  position: relative;
+  width: calc(50% + 1px);
+  padding-right: 20px;
+  text-align: right;
+}
+
+.isi .waktu {
+  font-size: 0.9rem;
+  color: var(--text-accent-color);
+}
+
+.isi .tugas {
+  font-size: 1rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+.isi:nth-child(even) {
+  left: calc(50% - 1px);
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.isi:nth-child(even) .tugas {
+  margin-left: 0;
+}
+
+.isi::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: -6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  top: 10px;
+  border: 3px solid var(--background-color);
+  box-shadow: 0 0 0 2px var(--line-color);
+}
+
+.isi:nth-child(even):before {
+  left: -6px;
+  right: auto;
+}
+
+.btn-changelog {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #873466;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(181, 101, 216, 0.4);
+}
+
+/* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+  #top {
+    padding: 1.5rem;
+    max-width: 90%;
+    margin: 10px;
+  }
+
+  .timeline:before {
+    left: 0;
+    margin-left: 0;
+  }
+
+  .isi {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .isi:nth-child(even) {
+    left: 0;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+  .isi:before {
+    left: -4px;
+    right: auto;
+  }
+
+  .isi:nth-child(even):before {
+    left: -4px;
+    right: auto;
+  }
+
+  .timeline h3 {
+    font-size: 0.9rem;
+  }
+
+  .timeline p {
+    font-size: 0.9rem;
+  }
+
+  .isi .waktu {
+    font-size: 0.8rem;
+  }
+
+  .isi .tugas {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #top {
+    padding: 1.75rem;
+    max-width: 95%;
+  }
+
+  .timeline h3 {
+    font-size: 0.95rem;
+  }
+
+  .timeline p {
+    font-size: 0.95rem;
+  }
+
+  .isi .waktu {
+    font-size: 0.85rem;
+  }
+
+  .isi .tugas {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Laptops/Desktops (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #top {
+    padding: 2rem;
+    max-width: 600px;
+  }
+
+  .timeline h3 {
+    font-size: 1rem;
+  }
+
+  .isi .tugas {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* Large Desktops (1025px and above) */
+@media screen and (min-width: 1025px) {
+  #top {
+    padding: 2rem;
+    max-width: 700px;
+  }
+
+  .timeline h3 {
+    font-size: 1.1rem;
+  }
+
+  .isi .tugas {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

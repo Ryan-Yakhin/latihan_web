@@ -60,7 +60,7 @@ body {
 
 .timeline {
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 0;
 }
 
@@ -68,77 +68,60 @@ body {
   content: '';
   position: absolute;
   width: 2px;
+  height: 100%;
   background-color: var(--line-color);
   top: 0;
-  bottom: 0;
   left: 50%;
-  margin-left: -1px;
+  transform: translateX(-50%);
 }
 
 .isi {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   position: relative;
-  width: calc(50% + 1px);
-  padding-right: 20px;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  z-index: 1;
 }
 
 .isi .waktu {
   font-size: 0.9rem;
   color: var(--text-accent-color);
+  text-align: right;
+  width: 50%;
+  flex-shrink: 0;
+  padding-right: 20px;
 }
 
 .isi .tugas {
   font-size: 1rem;
   background-color: var(--background-color);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  display: inline-block;
+  border-radius: 0;
+  padding: 5px 0;
+  box-shadow: none;
+  display: inline;
+  width: auto;
+  margin-left: 10px;
+  margin-top: 30px;
+  text-align: right;
+  color: var(--text-color);
 }
 
-.isi:nth-child(even) {
-  left: calc(50% - 1px);
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 0;
-}
-
-.isi:nth-child(even) .tugas {
-  margin-left: 0;
-}
-
-.isi::before {
+.isi:before {
   content: '';
   position: absolute;
   width: 12px;
   height: 12px;
-  right: -6px;
+  left: 50%;
   background-color: var(--primary-color);
   border-radius: 50%;
-  top: 10px;
+  top: 45%;
+  transform: translate(-50%, -50%);
   border: 3px solid var(--background-color);
   box-shadow: 0 0 0 2px var(--line-color);
-}
-
-.isi:nth-child(even):before {
-  left: -6px;
-  right: auto;
-}
-
-.btn-changelog {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 2rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-weight: 600;
+  z-index: 2;
 }
 
 .btn {
